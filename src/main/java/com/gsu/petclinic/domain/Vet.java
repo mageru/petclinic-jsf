@@ -2,6 +2,8 @@ package com.gsu.petclinic.domain;
 
 import com.gsu.petclinic.reference.Specialty;
 import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Enumerated;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,12 +19,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class Vet extends AbstractPerson {
 
-    @NotNull
-    @Past
-    @Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
-    private Calendar employedSince;
-
+    private Date employedSince;
+	
     @Enumerated
     private Specialty specialty;
 }

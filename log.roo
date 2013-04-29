@@ -49,3 +49,17 @@ logging setup --level INFO
 // script c:\clinic.roo
 exit
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-04-29 09:23:04
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-04-29 09:23:20
+web jsf setup --theme CUPERTINO
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-04-29 09:37:58
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-04-29 09:41:57
+web jsf all --package ~.jsf
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-04-29 09:42:15
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-04-29 10:41:06
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-04-29 10:46:13
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-04-29 10:46:18
+help
+web jsf all --package ~.jsf

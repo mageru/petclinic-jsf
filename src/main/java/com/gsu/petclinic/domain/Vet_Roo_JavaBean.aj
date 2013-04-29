@@ -5,15 +5,15 @@ package com.gsu.petclinic.domain;
 
 import com.gsu.petclinic.domain.Vet;
 import com.gsu.petclinic.reference.Specialty;
-import java.util.Calendar;
+import java.util.Date;
 
 privileged aspect Vet_Roo_JavaBean {
     
-    public Calendar Vet.getEmployedSince() {
+    public Date Vet.getEmployedSince() {
         return this.employedSince;
     }
     
-    public void Vet.setEmployedSince(Calendar employedSince) {
+    public void Vet.setEmployedSince(Date employedSince) {
         this.employedSince = employedSince;
     }
     

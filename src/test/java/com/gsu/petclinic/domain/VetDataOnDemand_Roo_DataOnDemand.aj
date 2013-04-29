@@ -70,7 +70,7 @@ privileged aspect VetDataOnDemand_Roo_DataOnDemand {
     }
     
     public void VetDataOnDemand.setEmployedSince(Vet obj, int index) {
-        Calendar employedSince = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH) - 1);
+        Date employedSince = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setEmployedSince(employedSince);
     }
     

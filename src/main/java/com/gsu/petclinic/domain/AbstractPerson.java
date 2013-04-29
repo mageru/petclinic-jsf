@@ -35,9 +35,10 @@ public abstract class AbstractPerson {
 
     @Size(min = 6, max = 30)
     private String email;
-
+    
     @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date birthDay;
+
 }
