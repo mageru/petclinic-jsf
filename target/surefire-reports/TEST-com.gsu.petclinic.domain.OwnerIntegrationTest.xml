@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="2.533" errors="0" skipped="0" tests="9" name="com.gsu.petclinic.domain.OwnerIntegrationTest">
+<testsuite failures="0" time="2.736" errors="0" skipped="0" tests="9" name="com.gsu.petclinic.domain.OwnerIntegrationTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_22\jre\bin"/>
@@ -58,13 +58,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="2.081" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testMarkerMethod"/>
-  <testcase time="0.292" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testCountOwners"/>
+  <testcase time="2.277" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testMarkerMethod"/>
+  <testcase time="0.283" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testCountOwners"/>
   <testcase time="0.028" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testFindOwner"/>
-  <testcase time="0.024" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testFindAllOwners"/>
+  <testcase time="0.033" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testFindAllOwners"/>
   <testcase time="0.027" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testFindOwnerEntries"/>
-  <testcase time="0.017" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testFlush"/>
-  <testcase time="0.02" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testMergeUpdate"/>
+  <testcase time="0.02" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testFlush"/>
+  <testcase time="0.024" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testMergeUpdate"/>
   <testcase time="0.018" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testPersist"/>
   <testcase time="0.026" classname="com.gsu.petclinic.domain.OwnerIntegrationTest" name="testRemove"/>
 </testsuite>

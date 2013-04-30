@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.133" errors="0" skipped="0" tests="9" name="com.gsu.petclinic.domain.VetIntegrationTest">
+<testsuite failures="0" time="0.131" errors="0" skipped="0" tests="9" name="com.gsu.petclinic.domain.VetIntegrationTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_22\jre\bin"/>
@@ -59,12 +59,12 @@
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
   <testcase time="0.004" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testMarkerMethod"/>
-  <testcase time="0.029" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFlush"/>
-  <testcase time="0.013" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testMergeUpdate"/>
+  <testcase time="0.035" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFlush"/>
+  <testcase time="0.014" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testMergeUpdate"/>
   <testcase time="0.016" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testPersist"/>
-  <testcase time="0.015" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testRemove"/>
-  <testcase time="0.016" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testCountVets"/>
-  <testcase time="0.01" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFindVet"/>
-  <testcase time="0.017" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFindAllVets"/>
-  <testcase time="0.013" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFindVetEntries"/>
+  <testcase time="0.013" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testRemove"/>
+  <testcase time="0.015" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testCountVets"/>
+  <testcase time="0.011" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFindVet"/>
+  <testcase time="0.012" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFindAllVets"/>
+  <testcase time="0.011" classname="com.gsu.petclinic.domain.VetIntegrationTest" name="testFindVetEntries"/>
 </testsuite>
