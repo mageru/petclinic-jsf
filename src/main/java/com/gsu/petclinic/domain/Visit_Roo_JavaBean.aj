@@ -42,4 +42,8 @@ privileged aspect Visit_Roo_JavaBean {
         this.vet = vet;
     }
     
+    public void Visit.setPetName(String petName) {
+        this.petName = petName;
+    }
+    
 }

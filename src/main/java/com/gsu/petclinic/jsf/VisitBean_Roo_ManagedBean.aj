@@ -61,6 +61,7 @@ privileged aspect VisitBean_Roo_ManagedBean {
     public void VisitBean.init() {
         columns = new ArrayList<String>();
         columns.add("description");
+        columns.add("petName");
         columns.add("visitDate");
     }
     
@@ -187,7 +188,7 @@ privileged aspect VisitBean_Roo_ManagedBean {
         petCreateInput.setCompleteMethod(expressionFactory.createMethodExpression(elContext, "#{visitBean.completePet}", List.class, new Class[] { String.class }));
         petCreateInput.setDropdown(true);
         petCreateInput.setValueExpression("var", expressionFactory.createValueExpression(elContext, "pet", String.class));
-        petCreateInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{pet.name} #{pet.weight}", String.class));
+        petCreateInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{pet.name} Owner:#{pet.ownerName}", String.class));
         petCreateInput.setValueExpression("itemValue", expressionFactory.createValueExpression(elContext, "#{pet}", Pet.class));
         petCreateInput.setConverter(new PetConverter());
         petCreateInput.setRequired(true);
@@ -211,7 +212,7 @@ privileged aspect VisitBean_Roo_ManagedBean {
         vetCreateInput.setCompleteMethod(expressionFactory.createMethodExpression(elContext, "#{visitBean.completeVet}", List.class, new Class[] { String.class }));
         vetCreateInput.setDropdown(true);
         vetCreateInput.setValueExpression("var", expressionFactory.createValueExpression(elContext, "vet", String.class));
-        vetCreateInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{vet.firstName} #{vet.lastName} #{vet.address} #{vet.city}", String.class));
+        vetCreateInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{vet.firstName} #{vet.lastName}", String.class));
         vetCreateInput.setValueExpression("itemValue", expressionFactory.createValueExpression(elContext, "#{vet}", Vet.class));
         vetCreateInput.setConverter(new VetConverter());
         vetCreateInput.setRequired(false);
@@ -289,7 +290,7 @@ privileged aspect VisitBean_Roo_ManagedBean {
         petEditInput.setCompleteMethod(expressionFactory.createMethodExpression(elContext, "#{visitBean.completePet}", List.class, new Class[] { String.class }));
         petEditInput.setDropdown(true);
         petEditInput.setValueExpression("var", expressionFactory.createValueExpression(elContext, "pet", String.class));
-        petEditInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{pet.name} #{pet.weight}", String.class));
+        petEditInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{pet.name} Owner:#{pet.ownerName}", String.class));
         petEditInput.setValueExpression("itemValue", expressionFactory.createValueExpression(elContext, "#{pet}", Pet.class));
         petEditInput.setConverter(new PetConverter());
         petEditInput.setRequired(true);
@@ -313,7 +314,7 @@ privileged aspect VisitBean_Roo_ManagedBean {
         vetEditInput.setCompleteMethod(expressionFactory.createMethodExpression(elContext, "#{visitBean.completeVet}", List.class, new Class[] { String.class }));
         vetEditInput.setDropdown(true);
         vetEditInput.setValueExpression("var", expressionFactory.createValueExpression(elContext, "vet", String.class));
-        vetEditInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{vet.firstName} #{vet.lastName} #{vet.address} #{vet.city}", String.class));
+        vetEditInput.setValueExpression("itemLabel", expressionFactory.createValueExpression(elContext, "#{vet.firstName} #{vet.lastName}", String.class));
         vetEditInput.setValueExpression("itemValue", expressionFactory.createValueExpression(elContext, "#{vet}", Vet.class));
         vetEditInput.setConverter(new VetConverter());
         vetEditInput.setRequired(false);
@@ -397,7 +398,7 @@ privileged aspect VisitBean_Roo_ManagedBean {
     public List<Pet> VisitBean.completePet(String query) {
         List<Pet> suggestions = new ArrayList<Pet>();
         for (Pet pet : Pet.findAllPets()) {
-            String petStr = String.valueOf(pet.getName() +  " "  + pet.getWeight());
+            String petStr = String.valueOf(pet.getName() + " " +pet.getOwnerName());
             if (petStr.toLowerCase().startsWith(query.toLowerCase())) {
                 suggestions.add(pet);
             }
@@ -408,7 +409,7 @@ privileged aspect VisitBean_Roo_ManagedBean {
     public List<Vet> VisitBean.completeVet(String query) {
         List<Vet> suggestions = new ArrayList<Vet>();
         for (Vet vet : Vet.findAllVets()) {
-            String vetStr = String.valueOf(vet.getFirstName() +  " "  + vet.getLastName() +  " "  + vet.getAddress() +  " "  + vet.getCity());
+            String vetStr = String.valueOf(vet.getFirstName() +  " "  + vet.getLastName());
             if (vetStr.toLowerCase().startsWith(query.toLowerCase())) {
                 suggestions.add(vet);
             }

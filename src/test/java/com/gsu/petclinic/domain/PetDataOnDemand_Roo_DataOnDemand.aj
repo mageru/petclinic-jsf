@@ -31,6 +31,7 @@ privileged aspect PetDataOnDemand_Roo_DataOnDemand {
     public Pet PetDataOnDemand.getNewTransientPet(int index) {
         Pet obj = new Pet();
         setName(obj, index);
+        setOwnerName(obj, index);
         setSendReminders(obj, index);
         setType(obj, index);
         setWeight(obj, index);
@@ -40,6 +41,11 @@ privileged aspect PetDataOnDemand_Roo_DataOnDemand {
     public void PetDataOnDemand.setName(Pet obj, int index) {
         String name = "name_" + index;
         obj.setName(name);
+    }
+    
+    public void PetDataOnDemand.setOwnerName(Pet obj, int index) {
+        String ownerName = "ownerName_" + index;
+        obj.setOwnerName(ownerName);
     }
     
     public void PetDataOnDemand.setSendReminders(Pet obj, int index) {

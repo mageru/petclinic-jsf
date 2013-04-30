@@ -32,4 +32,17 @@ public class Visit {
 
     @ManyToOne
     private Vet vet;
+    
+    private String petName;
+
+	public String getPetName() {
+		return pet.getName();
+	}
+	
+	public String setPetName() {
+		return pet.getName();
+	}
+
+    
+    
 }

@@ -58,6 +58,7 @@ privileged aspect PetBean_Roo_ManagedBean {
     @PostConstruct
     public void PetBean.init() {
         columns = new ArrayList<String>();
+        columns.add("ownerName");
         columns.add("name");
         columns.add("weight");
     }
@@ -130,6 +131,26 @@ privileged aspect PetBean_Roo_ManagedBean {
         
         HtmlPanelGrid htmlPanelGrid = (HtmlPanelGrid) application.createComponent(HtmlPanelGrid.COMPONENT_TYPE);
         
+        /**
+        OutputLabel ownerNameCreateOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
+        ownerNameCreateOutput.setFor("ownerNameCreateInput");
+        ownerNameCreateOutput.setId("ownerNameCreateOutput");
+        ownerNameCreateOutput.setValue("Owner Name:");
+        htmlPanelGrid.getChildren().add(ownerNameCreateOutput);
+        
+        
+        InputText ownerNameCreateInput = (InputText) application.createComponent(InputText.COMPONENT_TYPE);
+        ownerNameCreateInput.setId("ownerNameCreateInput");
+        ownerNameCreateInput.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{petBean.pet.ownerName}", String.class));
+        ownerNameCreateInput.setRequired(false);
+        htmlPanelGrid.getChildren().add(ownerNameCreateInput);
+        
+        Message ownerNameCreateInputMessage = (Message) application.createComponent(Message.COMPONENT_TYPE);
+        ownerNameCreateInputMessage.setId("ownerNameCreateInputMessage");
+        ownerNameCreateInputMessage.setFor("ownerNameCreateInput");
+        ownerNameCreateInputMessage.setDisplay("icon");
+        htmlPanelGrid.getChildren().add(ownerNameCreateInputMessage);
+        **/
         OutputLabel sendRemindersCreateOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
         sendRemindersCreateOutput.setFor("sendRemindersCreateInput");
         sendRemindersCreateOutput.setId("sendRemindersCreateOutput");
@@ -245,6 +266,25 @@ privileged aspect PetBean_Roo_ManagedBean {
         
         HtmlPanelGrid htmlPanelGrid = (HtmlPanelGrid) application.createComponent(HtmlPanelGrid.COMPONENT_TYPE);
         
+        /**
+        OutputLabel ownerNameEditOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
+        ownerNameEditOutput.setFor("ownerNameEditInput");
+        ownerNameEditOutput.setId("ownerNameEditOutput");
+        ownerNameEditOutput.setValue("Owner Name:");
+        htmlPanelGrid.getChildren().add(ownerNameEditOutput);
+        
+        InputText ownerNameEditInput = (InputText) application.createComponent(InputText.COMPONENT_TYPE);
+        ownerNameEditInput.setId("ownerNameEditInput");
+        ownerNameEditInput.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{petBean.pet.ownerName}", String.class));
+        ownerNameEditInput.setRequired(false);
+        htmlPanelGrid.getChildren().add(ownerNameEditInput);
+        
+        Message ownerNameEditInputMessage = (Message) application.createComponent(Message.COMPONENT_TYPE);
+        ownerNameEditInputMessage.setId("ownerNameEditInputMessage");
+        ownerNameEditInputMessage.setFor("ownerNameEditInput");
+        ownerNameEditInputMessage.setDisplay("icon");
+        htmlPanelGrid.getChildren().add(ownerNameEditInputMessage);
+        **/
         OutputLabel sendRemindersEditOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
         sendRemindersEditOutput.setFor("sendRemindersEditInput");
         sendRemindersEditOutput.setId("sendRemindersEditOutput");
@@ -360,6 +400,17 @@ privileged aspect PetBean_Roo_ManagedBean {
         
         HtmlPanelGrid htmlPanelGrid = (HtmlPanelGrid) application.createComponent(HtmlPanelGrid.COMPONENT_TYPE);
         
+        /**
+        HtmlOutputText ownerNameLabel = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
+        ownerNameLabel.setId("ownerNameLabel");
+        ownerNameLabel.setValue("Owner Name:");
+        htmlPanelGrid.getChildren().add(ownerNameLabel);
+        
+        HtmlOutputText ownerNameValue = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
+        ownerNameValue.setId("ownerNameValue");
+        ownerNameValue.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{petBean.pet.ownerName}", String.class));
+        htmlPanelGrid.getChildren().add(ownerNameValue);
+        **/
         HtmlOutputText sendRemindersLabel = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
         sendRemindersLabel.setId("sendRemindersLabel");
         sendRemindersLabel.setValue("Send Reminders:");

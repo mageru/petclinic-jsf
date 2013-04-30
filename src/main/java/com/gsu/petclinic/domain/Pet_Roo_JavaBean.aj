@@ -49,4 +49,8 @@ privileged aspect Pet_Roo_JavaBean {
         this.type = type;
     }
     
+    public void Pet.setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+    
 }

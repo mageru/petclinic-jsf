@@ -8,6 +8,7 @@ import com.gsu.petclinic.domain.Pet;
 import com.gsu.petclinic.jsf.OwnerBean;
 import com.gsu.petclinic.jsf.util.MessageFactory;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -20,7 +21,9 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.component.html.HtmlOutputText;
 import javax.faces.component.html.HtmlPanelGrid;
 import javax.faces.context.FacesContext;
+import javax.faces.convert.DateTimeConverter;
 import javax.faces.validator.LengthValidator;
+import org.primefaces.component.calendar.Calendar;
 import org.primefaces.component.inputtext.InputText;
 import org.primefaces.component.inputtextarea.InputTextarea;
 import org.primefaces.component.message.Message;
@@ -259,6 +262,27 @@ privileged aspect OwnerBean_Roo_ManagedBean {
         emailCreateInputMessage.setDisplay("icon");
         htmlPanelGrid.getChildren().add(emailCreateInputMessage);
         
+        OutputLabel birthDayCreateOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
+        birthDayCreateOutput.setFor("birthDayCreateInput");
+        birthDayCreateOutput.setId("birthDayCreateOutput");
+        birthDayCreateOutput.setValue("Birth Day:");
+        htmlPanelGrid.getChildren().add(birthDayCreateOutput);
+        
+        Calendar birthDayCreateInput = (Calendar) application.createComponent(Calendar.COMPONENT_TYPE);
+        birthDayCreateInput.setId("birthDayCreateInput");
+        birthDayCreateInput.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{ownerBean.owner.birthDay}", Date.class));
+        birthDayCreateInput.setNavigator(true);
+        birthDayCreateInput.setEffect("slideDown");
+        birthDayCreateInput.setPattern("dd/MM/yyyy");
+        birthDayCreateInput.setRequired(true);
+        htmlPanelGrid.getChildren().add(birthDayCreateInput);
+        
+        Message birthDayCreateInputMessage = (Message) application.createComponent(Message.COMPONENT_TYPE);
+        birthDayCreateInputMessage.setId("birthDayCreateInputMessage");
+        birthDayCreateInputMessage.setFor("birthDayCreateInput");
+        birthDayCreateInputMessage.setDisplay("icon");
+        htmlPanelGrid.getChildren().add(birthDayCreateInputMessage);
+        
         HtmlOutputText petsCreateOutput = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
         petsCreateOutput.setId("petsCreateOutput");
         petsCreateOutput.setValue("Pets:");
@@ -413,6 +437,27 @@ privileged aspect OwnerBean_Roo_ManagedBean {
         emailEditInputMessage.setDisplay("icon");
         htmlPanelGrid.getChildren().add(emailEditInputMessage);
         
+        OutputLabel birthDayEditOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
+        birthDayEditOutput.setFor("birthDayEditInput");
+        birthDayEditOutput.setId("birthDayEditOutput");
+        birthDayEditOutput.setValue("Birth Day:");
+        htmlPanelGrid.getChildren().add(birthDayEditOutput);
+        
+        Calendar birthDayEditInput = (Calendar) application.createComponent(Calendar.COMPONENT_TYPE);
+        birthDayEditInput.setId("birthDayEditInput");
+        birthDayEditInput.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{ownerBean.owner.birthDay}", Date.class));
+        birthDayEditInput.setNavigator(true);
+        birthDayEditInput.setEffect("slideDown");
+        birthDayEditInput.setPattern("dd/MM/yyyy");
+        birthDayEditInput.setRequired(true);
+        htmlPanelGrid.getChildren().add(birthDayEditInput);
+        
+        Message birthDayEditInputMessage = (Message) application.createComponent(Message.COMPONENT_TYPE);
+        birthDayEditInputMessage.setId("birthDayEditInputMessage");
+        birthDayEditInputMessage.setFor("birthDayEditInput");
+        birthDayEditInputMessage.setDisplay("icon");
+        htmlPanelGrid.getChildren().add(birthDayEditInputMessage);
+        
         HtmlOutputText petsEditOutput = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
         petsEditOutput.setId("petsEditOutput");
         petsEditOutput.setValue("Pets:");
@@ -501,6 +546,18 @@ privileged aspect OwnerBean_Roo_ManagedBean {
         emailValue.setId("emailValue");
         emailValue.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{ownerBean.owner.email}", String.class));
         htmlPanelGrid.getChildren().add(emailValue);
+        
+        HtmlOutputText birthDayLabel = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
+        birthDayLabel.setId("birthDayLabel");
+        birthDayLabel.setValue("Birth Day:");
+        htmlPanelGrid.getChildren().add(birthDayLabel);
+        
+        HtmlOutputText birthDayValue = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
+        birthDayValue.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{ownerBean.owner.birthDay}", Date.class));
+        DateTimeConverter birthDayValueConverter = (DateTimeConverter) application.createConverter(DateTimeConverter.CONVERTER_ID);
+        birthDayValueConverter.setPattern("dd/MM/yyyy");
+        birthDayValue.setConverter(birthDayValueConverter);
+        htmlPanelGrid.getChildren().add(birthDayValue);
         
         HtmlOutputText petsLabel = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
         petsLabel.setId("petsLabel");

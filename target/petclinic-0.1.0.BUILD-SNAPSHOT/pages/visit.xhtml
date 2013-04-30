@@ -19,14 +19,18 @@
         <h:outputFormat id="noRecordsFound" value="#{messages.label_no_records_found}" rendered="#{!visitBean.dataVisible}">
           <f:param value="Visits" />
         </h:outputFormat>
-        <p:dataTable id="list" value="#{visitBean.allVisits}" var="visit" rendered="#{visitBean.dataVisible}" resizableColumns="false" paginator="true" paginatorTemplate=" {CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,25,50" rows="10">
-          <p:columns value="#{visitBean.columns}" var="column" columnIndexVar="colIndex">
+        <p:outputPanel>
+          	<h:outputText value="Search all fields:" />
+          	<p:inputText id="globalFilter" onkeyup="visitsTable.filter()" /> 
+        </p:outputPanel>
+        <p:dataTable id="list" value="#{visitBean.allVisits}" var="visit" widgetVar="visitsTable" rendered="#{visitBean.dataVisible}" resizableColumns="false" paginator="true" paginatorTemplate=" {CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,25,50" rows="10">
+          <p:columns value="#{visitBean.columns}" var="column" columnIndexVar="colIndex" >
             <f:facet name="header">
-              <h:outputText value="#{applicationBean.getColumnName(column)}" />
+              <h:outputText value="#{applicationBean.getColumnName(column).toString()}" />              
             </f:facet>
             <h:outputText value="#{visit[column]}" />
           </p:columns>
-          <p:column styleClass="action-column">
+          <p:column styleClass="action-column" exportable="false">
             <f:facet name="header">
               <h:outputText value="Actions" />
             </f:facet>
@@ -44,6 +48,52 @@
             <p:tooltip for="deleteButton" value="#{messages.label_delete}" showEffect="fade" hideEffect="fade" />
           </p:column>
         </p:dataTable>
+      
+		<h:panelGrid columns="2">  
+    <p:panel header="Export All Data">  
+        <h:commandLink>  
+             <h:graphicImage library="images" name="excel_v2.PNG" alt="export excel" />
+            <p:dataExporter type="xls" target="list" fileName="Visits" />  
+        </h:commandLink>  
+  
+        <h:commandLink>  
+            <h:graphicImage library="images" name="pdf.png" alt="export pdf" />
+            <p:dataExporter type="pdf" target="list" fileName="Visits"/>  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <h:graphicImage library="images" name="csv.png" alt="export csv" />
+            <p:dataExporter type="csv" target="list" fileName="Visits" />  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <h:graphicImage library="images" name="xml.png" alt="export xml" />
+            <p:dataExporter type="xml" target="list" fileName="Visits" />  
+        </h:commandLink>  
+    </p:panel>  
+      
+    <p:panel header="Export Page Data">  
+        <h:commandLink>  
+            <h:graphicImage library="images" name="excel.png" alt="export excel" />
+            <p:dataExporter type="xls" target="list" fileName="Visits" pageOnly="true"/>  
+        </h:commandLink>  
+  
+        <h:commandLink>  
+            <h:graphicImage library="images" name="pdf.png" alt="export pdf" />
+            <p:dataExporter type="pdf" target="list" fileName="Visits" pageOnly="true"/>  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <h:graphicImage library="images" name="csv.png" alt="export csv" />
+            <p:dataExporter type="csv" target="list" fileName="Visits" pageOnly="true"/>  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <h:graphicImage library="images" name="xml.png" alt="export xml" />
+            <p:dataExporter type="xml" target="list" fileName="Visits" pageOnly="true"/>  
+        </h:commandLink>  
+    </p:panel>  
+</h:panelGrid>        
       </p:panel>
     </h:form>
     <p:dialog id="createDialog" header="#{messages.label_create} Visit" modal="true" widgetVar="createDialogWidget" dynamic="true" visible="#{visitBean.createDialogVisible}" resizable="true" maximizable="true" showEffect="fade" hideEffect="explode">

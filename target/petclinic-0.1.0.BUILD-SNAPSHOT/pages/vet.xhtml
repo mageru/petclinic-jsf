@@ -19,7 +19,7 @@
         <h:outputFormat id="noRecordsFound" value="#{messages.label_no_records_found}" rendered="#{!vetBean.dataVisible}">
           <f:param value="Vets" />
         </h:outputFormat>
-        <p:dataTable id="list" value="#{vetBean.allVets}" var="vet" rendered="#{vetBean.dataVisible}" resizableColumns="false" paginator="true" paginatorTemplate=" {CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,25,50" rows="10">
+        <p:dataTable id="list" value="#{vetBean.allVets}" var="vet" rendered="#{vetBean.dataVisible}" resizableColumns="true" paginator="true" paginatorTemplate=" {CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,25,50" rows="10">
           <p:columns value="#{vetBean.columns}" var="column" columnIndexVar="colIndex">
             <f:facet name="header">
               <h:outputText value="#{applicationBean.getColumnName(column)}" />

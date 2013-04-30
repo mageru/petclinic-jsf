@@ -32,4 +32,23 @@ public class Pet {
     @NotNull
     @Enumerated
     private PetType type;
+    
+    private String ownerName;
+    
+
+	public String getOwnerName() {
+		if (this.owner != null)
+			return this.owner.getFirstName()+" "+this.owner.getLastName();
+		else 
+			return "None";
+	}
+	
+	public String setOwnerName() {
+		if (this.owner != null)
+			return this.owner.getFirstName()+" "+this.owner.getLastName();
+		else 
+			return "None";
+	}
+    
+    
 }
