@@ -427,7 +427,7 @@
                 <version>1.1</version>
                 <configuration>
                     <server>mytomcatserver</server>
-                    <path>/petclinic</path>
+                    <path>/petclinicv2</path>
                     <url>http://dev-pros.info:8080/manager/text</url>
                 </configuration>
             </plugin>
