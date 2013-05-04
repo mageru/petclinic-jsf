@@ -1,44 +1,24 @@
 <aspectj>
 <aspects>
-<aspect name="com.gsu.petclinic.domain.Visit_Roo_JavaBean"/>
-<aspect name="com.gsu.petclinic.domain.Vet_Roo_Configurable"/>
-<aspect name="com.gsu.petclinic.jsf.VisitBean_Roo_Configurable"/>
 <aspect name="com.gsu.petclinic.jsf.converter.PetConverter_Roo_Converter"/>
-<aspect name="com.gsu.petclinic.domain.Pet_Roo_ToString"/>
-<aspect name="com.gsu.petclinic.domain.Vet_Roo_ToString"/>
-<aspect name="com.gsu.petclinic.domain.Visit_Roo_Configurable"/>
-<aspect name="com.gsu.petclinic.jsf.VetBean_Roo_Serializable"/>
 <aspect name="com.gsu.petclinic.jsf.VetBean_Roo_ManagedBean"/>
-<aspect name="com.gsu.petclinic.jsf.converter.VetConverter_Roo_Converter"/>
 <aspect name="com.gsu.petclinic.domain.Pet_Roo_Jpa_ActiveRecord"/>
-<aspect name="com.gsu.petclinic.domain.Owner_Roo_Configurable"/>
-<aspect name="com.gsu.petclinic.jsf.PetBean_Roo_ManagedBean"/>
-<aspect name="com.gsu.petclinic.jsf.converter.VetConverter_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.jsf.converter.VetConverter_Roo_Converter"/>
 <aspect name="com.gsu.petclinic.domain.Visit_Roo_Jpa_Entity"/>
-<aspect name="com.gsu.petclinic.jsf.OwnerBean_Roo_Serializable"/>
+<aspect name="com.gsu.petclinic.jsf.converter.VetConverter_Roo_Configurable"/>
 <aspect name="com.gsu.petclinic.domain.Vet_Roo_JavaBean"/>
 <aspect name="com.gsu.petclinic.jsf.converter.VisitConverter_Roo_Converter"/>
 <aspect name="com.gsu.petclinic.jsf.converter.PetConverter_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_Configurable"/>
 <aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_ToString"/>
 <aspect name="com.gsu.petclinic.domain.Vet_Roo_Jpa_ActiveRecord"/>
-<aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_Configurable"/>
-<aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_Jpa_ActiveRecord"/>
-<aspect name="com.gsu.petclinic.domain.Pet_Roo_Configurable"/>
-<aspect name="com.gsu.petclinic.jsf.converter.OwnerConverter_Roo_Configurable"/>
 <aspect name="com.gsu.petclinic.jsf.VisitBean_Roo_Serializable"/>
-<aspect name="com.gsu.petclinic.jsf.converter.VisitConverter_Roo_Configurable"/>
-<aspect name="com.gsu.petclinic.jsf.OwnerBean_Roo_Configurable"/>
-<aspect name="com.gsu.petclinic.domain.Pet_Roo_Jpa_Entity"/>
 <aspect name="com.gsu.petclinic.jsf.PetBean_Roo_Serializable"/>
-<aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_Jpa_Entity"/>
 <aspect name="com.gsu.petclinic.jsf.VetBean_Roo_Configurable"/>
 <aspect name="com.gsu.petclinic.domain.Pet_Roo_JavaBean"/>
 <aspect name="com.gsu.petclinic.domain.Visit_Roo_ToString"/>
 <aspect name="com.gsu.petclinic.jsf.converter.OwnerConverter_Roo_Converter"/>
 <aspect name="com.gsu.petclinic.domain.Pet_Roo_Finder"/>
-<aspect name="com.gsu.petclinic.domain.Visit_Roo_Jpa_ActiveRecord"/>
-<aspect name="com.gsu.petclinic.domain.Owner_Roo_JavaBean"/>
-<aspect name="com.gsu.petclinic.jsf.VisitBean_Roo_ManagedBean"/>
 <aspect name="com.gsu.petclinic.jsf.ApplicationBean_Roo_ApplicationBean"/>
 <aspect name="com.gsu.petclinic.domain.Vet_Roo_Jpa_Entity"/>
 <aspect name="com.gsu.petclinic.domain.Owner_Roo_ToString"/>
@@ -46,8 +26,28 @@
 <aspect name="com.gsu.petclinic.domain.Owner_Roo_Jpa_Entity"/>
 <aspect name="com.gsu.petclinic.domain.Owner_Roo_Jpa_ActiveRecord"/>
 <aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_JavaBean"/>
-<aspect name="com.gsu.petclinic.jsf.ApplicationBean_Roo_Configurable"/>
 <aspect name="com.gsu.petclinic.jsf.PetBean_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.domain.Visit_Roo_JavaBean"/>
+<aspect name="com.gsu.petclinic.domain.Vet_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.jsf.VisitBean_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.domain.Pet_Roo_ToString"/>
+<aspect name="com.gsu.petclinic.domain.Vet_Roo_ToString"/>
+<aspect name="com.gsu.petclinic.jsf.VetBean_Roo_Serializable"/>
+<aspect name="com.gsu.petclinic.domain.Visit_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.domain.Owner_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.jsf.PetBean_Roo_ManagedBean"/>
+<aspect name="com.gsu.petclinic.jsf.OwnerBean_Roo_Serializable"/>
+<aspect name="com.gsu.petclinic.domain.Pet_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.gsu.petclinic.jsf.converter.OwnerConverter_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.jsf.converter.VisitConverter_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.jsf.OwnerBean_Roo_Configurable"/>
+<aspect name="com.gsu.petclinic.domain.Pet_Roo_Jpa_Entity"/>
+<aspect name="com.gsu.petclinic.domain.AbstractPerson_Roo_Jpa_Entity"/>
+<aspect name="com.gsu.petclinic.domain.Visit_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.gsu.petclinic.domain.Owner_Roo_JavaBean"/>
+<aspect name="com.gsu.petclinic.jsf.VisitBean_Roo_ManagedBean"/>
+<aspect name="com.gsu.petclinic.jsf.ApplicationBean_Roo_Configurable"/>
 </aspects>
 </aspectj>
 
