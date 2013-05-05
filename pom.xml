@@ -39,6 +39,11 @@
             <url>http://repository.primefaces.org</url>
             <name>PrimeFaces Maven Repository</name>
         </repository>
+	<repository>  
+   		<id>maven-restlet</id>  
+   		<name>Public online Restlet repository</name>  
+   		<url>http://maven.restlet.org</url>  
+	</repository>  	
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -112,6 +117,26 @@
             <version>3.1</version>
         </dependency>
         <dependency>
+	    	<groupId>org.restlet.jee</groupId>
+            <artifactId>org.restlet</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+	    	<groupId>org.restlet.jee</groupId>
+            <artifactId>org.restlet.ext.servlet</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+	    <groupId>org.restlet.jee</groupId>
+            <artifactId>org.restlet.ext.json</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+	    <groupId>org.restlet.jee</groupId>
+            <artifactId>org.restlet.ext.xml</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
 			<version>2.1.7</version>
@@ -181,6 +206,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>1.1.1</version>
+		</dependency>
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.0-api</artifactId>

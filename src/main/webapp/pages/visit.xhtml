@@ -26,7 +26,7 @@
         <p:dataTable id="list" value="#{visitBean.allVisits}" var="visit" widgetVar="visitsTable" rendered="#{visitBean.dataVisible}" resizableColumns="false" paginator="true" paginatorTemplate=" {CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,25,50" rows="10">
           <p:columns value="#{visitBean.columns}" var="column" columnIndexVar="colIndex" >
             <f:facet name="header">
-              <h:outputText value="#{applicationBean.getColumnName(column).toString()}" />              
+              <h:outputText value="#{applicationBean.getColumnName(column)}" />              
             </f:facet>
             <h:outputText value="#{visit[column]}" />
           </p:columns>

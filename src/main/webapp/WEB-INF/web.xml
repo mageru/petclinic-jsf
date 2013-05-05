@@ -38,6 +38,19 @@
     <listener>
         <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
     </listener>
+     <servlet>  
+      <servlet-name>RestletServlet</servlet-name>  
+      <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+      <init-param>
+            <!-- Application class name -->
+            <param-name>org.restlet.application</param-name>
+            <param-value>com.gsu.petclinic.rest.PetClinicApplication</param-value>
+      </init-param>
+   </servlet>  
+   <servlet-mapping>  
+      <servlet-name>RestletServlet</servlet-name>  
+      <url-pattern>/rest/*</url-pattern>  
+   </servlet-mapping>  
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>

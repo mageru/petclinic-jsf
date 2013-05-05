@@ -1,7 +1,13 @@
 package com.gsu.petclinic.domain;
 
 import com.gsu.petclinic.reference.Specialty;
-import java.util.Calendar;
+
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
+
+import java.util.ArrayList;
+
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -9,8 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -77,5 +82,21 @@ public class Vet extends AbstractPerson {
 
 	public void setSpecialty(Specialty specialty) {
         this.specialty = specialty;
+    }
+	
+	public String toJson() {
+        return new JSONSerializer().exclude("*.class").serialize(this);
+    }
+    
+    public static Vet fromJsonToVet(String json) {
+        return new JSONDeserializer<Vet>().use(null, Vet.class).deserialize(json);
+    }
+    
+    public static String toJsonArray(Collection<Vet> collection) {
+        return new JSONSerializer().exclude("*.class").serialize(collection);
+    }
+    
+    public static Collection<Vet> fromJsonArrayToVets(String json) {
+        return new JSONDeserializer<List<Vet>>().use(null, ArrayList.class).use("values", Vet.class).deserialize(json);
     }
 }

@@ -1,5 +1,7 @@
 package com.gsu.petclinic.domain;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -25,6 +27,9 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.transaction.annotation.Transactional;
+
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
 
 @Entity
 @Configurable
@@ -189,5 +194,21 @@ public class Visit {
 
 	public void setPetName(String petName) {
         this.petName = petName;
+    }
+	
+	public String toJson() {
+        return new JSONSerializer().exclude("*.class").serialize(this);
+    }
+    
+    public static Visit fromJsonToVisit(String json) {
+        return new JSONDeserializer<Visit>().use(null, Visit.class).deserialize(json);
+    }
+    
+    public static String toJsonArray(Collection<Visit> collection) {
+        return new JSONSerializer().exclude("*.class").serialize(collection);
+    }
+    
+    public static Collection<Visit> fromJsonArrayToVisits(String json) {
+        return new JSONDeserializer<List<Visit>>().use(null, ArrayList.class).use("values", Visit.class).deserialize(json);
     }
 }

@@ -1,6 +1,12 @@
 package com.gsu.petclinic.domain;
 
 import com.gsu.petclinic.reference.PetType;
+
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -248,5 +254,21 @@ public class Pet {
 
 	public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
+    }
+	
+	public String toJson() {
+        return new JSONSerializer().exclude("*.class").serialize(this);
+    }
+    
+    public static Pet fromJsonToPet(String json) {
+        return new JSONDeserializer<Pet>().use(null, Pet.class).deserialize(json);
+    }
+    
+    public static String toJsonArray(Collection<Pet> collection) {
+        return new JSONSerializer().exclude("*.class").serialize(collection);
+    }
+    
+    public static Collection<Pet> fromJsonArrayToPets(String json) {
+        return new JSONDeserializer<List<Pet>>().use(null, ArrayList.class).use("values", Pet.class).deserialize(json);
     }
 }

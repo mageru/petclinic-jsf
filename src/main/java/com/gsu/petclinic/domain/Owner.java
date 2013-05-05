@@ -1,5 +1,7 @@
 package com.gsu.petclinic.domain;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,6 +15,9 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.transaction.annotation.Transactional;
+
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
 
 @Entity
 @Configurable
@@ -59,5 +64,21 @@ public class Owner extends AbstractPerson {
         Owner merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
+    }
+	
+	public String toJson() {
+		return new JSONSerializer().exclude("*.class").serialize(this);
+	}
+	
+	public static Owner fromJsonToOwner(String json) {
+        return new JSONDeserializer<Owner>().use(null, Owner.class).deserialize(json);
+    }
+    
+    public static String toJsonArray(Collection<Owner> collection) {
+        return new JSONSerializer().exclude("*.class").serialize(collection);
+    }
+    
+    public static Collection<Owner> fromJsonArrayToOwners(String json) {
+        return new JSONDeserializer<List<Owner>>().use(null, ArrayList.class).use("values", Owner.class).deserialize(json);
     }
 }
